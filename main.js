@@ -48,9 +48,10 @@ function initActiveNavLinks() {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const id = entry.target.getAttribute('id');
+          const targetId = id === 'founder' ? 'about' : id;
           navLinks.forEach(link => {
             const href = link.getAttribute('href');
-            link.classList.toggle('active', href === `#${id}`);
+            link.classList.toggle('active', href === `#${targetId}`);
           });
         }
       });
